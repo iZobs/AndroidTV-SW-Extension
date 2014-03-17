@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/smart_watch_2_control_width"
+    android:layout_height="@dimen/smart_watch_2_control_height"
+    android:orientation="vertical"
+    android:background="@android:color/black">
+
+    <Button
+        android:id="@+id/buttonPowerTV"
+        android:layout_height="0dp"
+        android:layout_width="@dimen/smart_watch_2_control_width"
+        android:layout_weight="1"
+        android:textSize="8dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:drawableLeft="@drawable/ic_action_io"
+        android:text="@string/power_tv" />
+
+    <Button
+        android:id="@+id/buttonPowerSTB"
+        android:layout_height="0dp"
+        android:layout_width="@dimen/smart_watch_2_control_width"
+        android:layout_weight="1"
+        android:textSize="8dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:drawableLeft="@drawable/ic_action_io"
+        android:text="@string/power_stb" />
+
+    <Button
+        android:id="@+id/buttonPowerAVR"
+        android:layout_height="0dp"
+        android:layout_width="@dimen/smart_watch_2_control_width"
+        android:layout_weight="1"
+        android:textSize="8dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:drawableLeft="@drawable/ic_action_io"
+        android:text="@string/power_avr" />
+
+</LinearLayout>

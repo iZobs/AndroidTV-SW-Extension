@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/smart_watch_2_control_width"
+    android:layout_height="@dimen/smart_watch_2_control_height"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/containerVolume"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:orientation="horizontal"
+        android:background="@android:color/black" >
+
+        <ImageButton
+            android:id="@+id/buttonPause"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_playback_pause"/>
+
+        <ImageButton
+            android:id="@+id/buttonPlay"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_playback_play"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerChannel"
+        android:layout_height="88px"
+        android:layout_width="@dimen/smart_watch_2_control_width"
+        android:orientation="horizontal"
+        android:background="@android:color/black">
+
+        <ImageButton
+            android:id="@+id/buttonPrev"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_playback_prev"/>
+
+        <ImageButton
+            android:id="@+id/buttonRewind"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_playback_rew"/>
+
+        <ImageButton
+            android:id="@+id/buttonForward"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_playback_forw"/>
+
+        <ImageButton
+            android:id="@+id/buttonNext"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_playback_next"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/smart_watch_2_control_width"
+    android:layout_height="@dimen/smart_watch_2_control_height"
+    android:orientation="horizontal"
+    tools:ignore="PxUsage,UselessParent,HardcodedText" >
+
+    <LinearLayout
+        android:id="@+id/containerVolume"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/black" >
+
+        <Button
+            android:id="@+id/buttonVolUp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:text="V+"/>
+
+        <Button
+            android:id="@+id/buttonVolDown"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:text="V-"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerChannel"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/black"
+        >
+
+        <Button
+            android:id="@+id/buttonChannelUp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:text="C+"/>
+
+        <Button
+            android:id="@+id/buttonChannelDown"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:text="C-"/>
+    </LinearLayout>
+
+</LinearLayout>

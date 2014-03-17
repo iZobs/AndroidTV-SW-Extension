@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/smart_watch_2_control_width"
+    android:layout_height="@dimen/smart_watch_2_control_height"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/containerVolume"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:orientation="horizontal"
+        android:background="@android:color/black" >
+
+        <ImageButton
+            android:id="@+id/buttonMute"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_volume_mute"/>
+
+        <ImageButton
+            android:id="@+id/buttonVolDown"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_volume_down"/>
+
+        <ImageButton
+            android:id="@+id/buttonVolUp"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_volume_up"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerChannel"
+        android:layout_height="88px"
+        android:layout_width="@dimen/smart_watch_2_control_width"
+        android:orientation="horizontal"
+        android:background="@android:color/black">
+
+        <Button
+            android:id="@+id/buttonChannelDown"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:textSize="8dp"
+            android:text="CH -"/>
+
+        <Button
+            android:id="@+id/buttonChannelUp"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:textSize="8dp"
+            android:text="CH +"/>
+
+    </LinearLayout>
+
+</LinearLayout>

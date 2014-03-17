@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Name of app, shown when installing/uninstalling extension -->
+    <string name="app_name">AndroidTV SW Extension</string>
+    <!-- Name of extension, shown in preferences -->
+    <string name="extension_name">AndroidTV Remote</string>
+    <!-- Configuration title shown in preferences -->
+    <string name="configuration_text">Sample control settings</string>
+    <!-- Menu option shown in preferences -->
+    <string name="preferences_title">AndroidTV SW Settings</string>
+    <string name="preferences_option_read_me">READ ME</string>
+    <!-- Read me text shown in dialog -->
+    <string name="preference_option_read_me_txt">The Advanced Control Extension uses API v2 features to display scrollable lists and a swipeable gallery. The Extension overrides the Back button to navigate back to previous control extension screens.  </string>
+
+    <string name="power_tv">TV</string>
+    <string name="power_stb">STB</string>
+    <string name="power_avr">AVR</string>
+</resources>
