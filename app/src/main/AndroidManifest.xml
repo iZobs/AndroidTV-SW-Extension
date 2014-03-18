@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.mtthsfrdrch.an3mote.sw2">
+    package="de.mtthsfrdrch.an3mote.sw2"
+    android:versionCode="60"
+    android:versionName="0.6.0" >
 
     <uses-permission android:name="com.sonyericsson.extras.liveware.aef.EXTENSION_PERMISSION" />
 
