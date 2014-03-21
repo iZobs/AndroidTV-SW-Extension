@@ -1,5 +1,5 @@
 # AndroidTV SW Extension
-![AndroidTV SW Extension](https://github.com/mtthsfrdrch/AnroidTV-SW-Extension/raw/master/app/src/main/res/drawable-xxhdpi/ic_launcher.png "AndroidTV SW Extension logo")
+![AndroidTV SW Extension](https://github.com/mtthsfrdrch/AndroidTV-SW-Extension/raw/master/app/src/main/res/drawable-xxhdpi/ic_launcher.png "AndroidTV-SW-Extension logo")
 
 Sony SmartWatch2 Extension sending keypresses to GoogleTV/AndroidTV-devices using An3Mote
 
