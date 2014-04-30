@@ -7,10 +7,12 @@
 
     <Button
         android:id="@+id/buttonPowerTV"
+        android:background="@color/bg_button"
         android:layout_height="0dp"
         android:layout_width="@dimen/smart_watch_2_control_width"
         android:layout_weight="1"
         android:textSize="8dp"
+        android:layout_margin="@dimen/btn_margin"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
         android:drawableLeft="@drawable/ic_action_io"
@@ -18,10 +20,12 @@
 
     <Button
         android:id="@+id/buttonPowerSTB"
+        android:background="@color/bg_button"
         android:layout_height="0dp"
         android:layout_width="@dimen/smart_watch_2_control_width"
         android:layout_weight="1"
         android:textSize="8dp"
+        android:layout_margin="@dimen/btn_margin"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
         android:drawableLeft="@drawable/ic_action_io"
@@ -29,10 +33,12 @@
 
     <Button
         android:id="@+id/buttonPowerAVR"
+        android:background="@color/bg_button"
         android:layout_height="0dp"
         android:layout_width="@dimen/smart_watch_2_control_width"
         android:layout_weight="1"
         android:textSize="8dp"
+        android:layout_margin="@dimen/btn_margin"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
         android:drawableLeft="@drawable/ic_action_io"

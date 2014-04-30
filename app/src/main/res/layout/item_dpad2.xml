@@ -14,10 +14,12 @@
         <FrameLayout
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonPower"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -32,10 +34,12 @@
         <FrameLayout
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonDpadUp"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -50,10 +54,12 @@
         <FrameLayout
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonMenu"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -77,10 +83,12 @@
             android:id="@+id/buttonDpadLeftContainer"
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonDpadLeft"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -96,10 +104,12 @@
             android:id="@+id/buttonDpadCenterContainer"
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonDpadCenter"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -115,10 +125,12 @@
             android:id="@+id/buttonDpadRightContainer"
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonDpadRight"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -142,10 +154,12 @@
             android:id="@+id/buttonBackContainer"
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonBack"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -161,10 +175,12 @@
             android:id="@+id/buttonDpadDownContainer"
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonDpadDown"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -180,10 +196,12 @@
             android:id="@+id/buttonHomeContainer"
             android:layout_width="0px"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
             <Button
                 android:id="@+id/buttonHome"
+                android:background="@color/bg_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Name of app, shown when installing/uninstalling extension -->
-    <string name="app_name">AndroidTV SW Extension</string>
+    <string name="app_name">AndroidTV Remote for SwatchWatch 2</string>
+    <string name="app_version">v0.6.1</string>
     <!-- Name of extension, shown in preferences -->
     <string name="extension_name">AndroidTV Remote</string>
+
     <!-- Configuration title shown in preferences -->
-    <string name="configuration_text">Sample control settings</string>
-    <!-- Menu option shown in preferences -->
-    <string name="preferences_title">AndroidTV SW Settings</string>
-    <string name="preferences_option_read_me">READ ME</string>
-    <!-- Read me text shown in dialog -->
-    <string name="preference_option_read_me_txt">The Advanced Control Extension uses API v2 features to display scrollable lists and a swipeable gallery. The Extension overrides the Back button to navigate back to previous control extension screens.  </string>
+    <string name="about_title">About</string>
+    <string name="about_text">To make AndroidTV Remote work, An3Mote needs to be installed and paired.</string>
+    <string name="about_an3mote_title">Install An3Mote</string>
+    <string name="about_an3mote_url">https://plus.google.com/communities/114784222385113449350</string>
+    <string name="about_group_an3mote">An3Mote</string>
+    <string name="about_group_SW2">SmartWatch 2 Extension</string>
+
+    <string name="about_playStoreUri">market://details?id=%1$s</string>
+    <string name="about_playStoreLink">https://market.android.com/details?id=%1$s</string>
+    <string name="about_mail">mtthsfrdrch@gmail.com</string>
+
+    <string name="error_noActivity">No application can handle this request, please install a web-browser</string>
 
     <string name="power_tv">TV</string>
     <string name="power_stb">STB</string>
     <string name="power_avr">AVR</string>
+    <string name="about_rate">Rate at Google Play</string>
+    <string name="about_share">Suggest to friends</string>
+    <string name="about_feedback">Send feedback</string>
+
 </resources>

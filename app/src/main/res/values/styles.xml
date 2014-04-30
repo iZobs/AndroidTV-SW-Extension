@@ -5,6 +5,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="ExtensionLightTheme" parent="@android:style/Theme.DeviceDefault.Light" />
+    <style name="ExtensionLightTheme" parent="@android:style/Theme.Holo.Light" />
+    <style name="ExtensionTheme" parent="@android:style/Theme.Holo" />
 
 </resources>

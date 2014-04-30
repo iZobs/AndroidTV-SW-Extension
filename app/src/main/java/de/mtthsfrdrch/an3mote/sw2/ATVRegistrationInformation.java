@@ -103,7 +103,7 @@ public class ATVRegistrationInformation extends RegistrationInformation {
         values.put(Registration.ExtensionColumns.CONFIGURATION_ACTIVITY,
                 ATVPreferenceActivity.class.getName());
         values.put(Registration.ExtensionColumns.CONFIGURATION_TEXT,
-                context.getString(R.string.configuration_text));
+                context.getString(R.string.about_title));
         values.put(Registration.ExtensionColumns.NAME, context.getString(R.string.extension_name));
         values.put(Registration.ExtensionColumns.EXTENSION_KEY,
                 ATVExtensionService.EXTENSION_KEY);

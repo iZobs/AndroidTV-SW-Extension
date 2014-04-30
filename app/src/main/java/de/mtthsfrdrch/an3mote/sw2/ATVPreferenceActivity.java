@@ -1,109 +1,99 @@
-/*
-Copyright (c) 2011, Sony Ericsson Mobile Communications AB
-Copyright (c) 2011-2013, Sony Mobile Communications AB
-
- All rights reserved.
-
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
-
- * Redistributions of source code must retain the above copyright notice, this
- list of conditions and the following disclaimer.
-
- * Redistributions in binary form must reproduce the above copyright notice,
- this list of conditions and the following disclaimer in the documentation
- and/or other materials provided with the distribution.
-
- * Neither the name of the Sony Ericsson Mobile Communications AB / Sony Mobile
- Communications AB nor the names of its contributors may be used to endorse or promote
- products derived from this software without specific prior written permission.
-
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
- ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
- FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-
 package de.mtthsfrdrch.an3mote.sw2;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
-import android.util.Log;
+import android.preference.PreferenceFragment;
+import android.widget.Toast;
 
-/**
- * The sample control preference activity handles the preferences for the sample
- * control extension.
- */
 public class ATVPreferenceActivity extends android.preference.PreferenceActivity {
 
-    private static final int DIALOG_READ_ME = 1;
-
-    @SuppressWarnings("deprecation")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.preference);
-
-        // Handle read me
-        Preference preference = findPreference(getText(R.string.preference_key_read_me));
-        preference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                showDialog(DIALOG_READ_ME);
-                return true;
-            }
-        });
-
+        getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new AboutFragment())
+                .commit();
     }
 
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        Dialog dialog = null;
+    public static class AboutFragment extends PreferenceFragment implements OnPreferenceClickListener {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.about);
 
-        switch (id) {
-            case DIALOG_READ_ME:
-                dialog = createReadMeDialog();
-                break;
-            default:
-                Log.w(ATVExtensionService.LOG_TAG, "Not a valid dialog id: " + id);
-                break;
+            findPreference("pref_an3mote").setOnPreferenceClickListener(this);
+            findPreference("pref_share").setOnPreferenceClickListener(this);
+            findPreference("pref_rate").setOnPreferenceClickListener(this);
+            findPreference("pref_feedback").setOnPreferenceClickListener(this);
         }
 
-        return dialog;
-    }
+        private void shareAppLink() {
+            String link = getString(R.string.about_playStoreLink, getActivity().getPackageName());
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, link);
+            intent.setType("text/plain");
+            startActivity(intent);
+        }
 
-    /**
-     * Create the Read me dialog
-     *
-     * @return the Dialog
-     */
-    private Dialog createReadMeDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.preference_option_read_me_txt)
-                .setTitle(R.string.preferences_option_read_me)
-                .setIcon(android.R.drawable.ic_dialog_info)
-                .setPositiveButton(android.R.string.ok, new OnClickListener() {
+        private void rateOnGooglePlay() {
+            String uri = getString(R.string.about_playStoreUri, getActivity().getPackageName());
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+            try {
+                startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                String url = getString(R.string.about_playStoreLink, getActivity().getPackageName());
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        }
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+        public void sendFeedback() {
+            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
+                    new String[]{getString(R.string.about_mail)});
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
+                    getString(R.string.app_name) + ' ' + getString(R.string.app_version));
+
+            String androidVersion = "Android " + Build.VERSION.RELEASE + " (" + Build.MODEL + ")";
+            String text = "Hi,\n\n\n\n" + androidVersion;
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, text);
+            startActivity(emailIntent);
+        }
+
+        @Override
+        public boolean onPreferenceClick(Preference preference) {
+            String key = preference.getKey();
+            switch (key) {
+                case "pref_an3mote":
+                    try {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.about_an3mote_url)));
+                        startActivity(intent);
+                    } catch (ActivityNotFoundException ex) {
+                        Toast.makeText(getActivity(), R.string.error_noActivity, Toast.LENGTH_LONG).show();
                     }
-                });
-        return builder.create();
+                    break;
+                case "pref_share":
+                    shareAppLink();
+                    break;
+                case "pref_rate":
+                    rateOnGooglePlay();
+                    break;
+                case "pref_feedback":
+                    sendFeedback();
+                    break;
+            }
+
+            return true;
+        }
     }
+
 
 }

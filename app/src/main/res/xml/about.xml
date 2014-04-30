@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/about_group_an3mote">
+        <Preference
+            android:summary="@string/about_text"
+            android:selectable="false" />
+        <Preference
+            android:key="pref_an3mote"
+            android:title="@string/about_an3mote_title"
+            android:icon="@drawable/ic_an3mote" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/about_group_SW2">
+        <Preference
+            android:title="@string/app_version" />
+        <Preference
+            android:key="pref_share"
+            android:title="@string/about_share"
+            android:icon="@drawable/ic_action_share" />
+        <Preference
+            android:key="pref_rate"
+            android:title="@string/about_rate"
+            android:icon="@drawable/ic_action_star_10" />
+        <Preference
+            android:key="pref_feedback"
+            android:title="@string/about_feedback"
+            android:icon="@drawable/ic_action_mail" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

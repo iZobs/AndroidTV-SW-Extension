@@ -11,26 +11,65 @@
         android:orientation="horizontal"
         android:background="@android:color/black" >
 
-        <ImageButton
-            android:id="@+id/buttonMute"
-            android:layout_height="match_parent"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_action_volume_mute"/>
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
 
-        <ImageButton
-            android:id="@+id/buttonVolDown"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_action_volume_down"/>
+            <Button
+                android:id="@+id/buttonMute"
+                android:background="@color/bg_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-        <ImageButton
-            android:id="@+id/buttonVolUp"
-            android:layout_height="match_parent"
+            <ImageView
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_action_volume_mute"
+                android:scaleType="centerInside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_action_volume_up"/>
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
+
+            <Button
+                android:id="@+id/buttonVolDown"
+                android:background="@color/bg_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_action_volume_down"
+                android:scaleType="centerInside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="@dimen/btn_margin">
+
+            <Button
+                android:id="@+id/buttonVolUp"
+                android:background="@color/bg_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_action_volume_up"
+                android:scaleType="centerInside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -42,24 +81,30 @@
 
         <Button
             android:id="@+id/buttonChannelDown"
+            android:background="@color/bg_button"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:layout_margin="@dimen/btn_margin"
             android:gravity="center"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:textSize="8dp"
+            android:textColor="#33b5e5"
             android:text="CH -"/>
 
         <Button
             android:id="@+id/buttonChannelUp"
+            android:background="@color/bg_button"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:layout_margin="@dimen/btn_margin"
             android:gravity="center"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:textSize="8dp"
+            android:textColor="#33b5e5"
             android:text="CH +"/>
 
     </LinearLayout>

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.sonyericsson.extras.liveware.aef.control.Control;
 import com.sonyericsson.extras.liveware.extension.util.control.ControlListItem;
 import com.sonymobile.smartconnect.extension.advancedcontrolsample.controls.ControlManagerSmartWatch2;
 import com.sonymobile.smartconnect.extension.advancedcontrolsample.controls.ManagedControlExtension;
@@ -50,7 +49,7 @@ public class ATVControlExtension extends ManagedControlExtension {
             if (listItemPosition == 0) {
                 item = createItem(listItemPosition, R.layout.item_power);
             } else if (listItemPosition == 1) {
-                item = createItem(listItemPosition, R.layout.item_dpad);
+                item = createItem(listItemPosition, R.layout.item_dpad2);
             } else if (listItemPosition == 2) {
                 item = createItem(listItemPosition, R.layout.item_media);
             } else if (listItemPosition == 3) {
@@ -65,18 +64,14 @@ public class ATVControlExtension extends ManagedControlExtension {
     @Override
     public void onListItemSelected(ControlListItem listItem) {
         super.onListItemSelected(listItem);
-        // We save the last "selected" position, this is the current visible
-        // list item index. The position can later be used on resume
         lastKnownPosition = listItem.listItemPosition;
     }
 
     @Override
     public void onListItemClick(final ControlListItem listItem, final int clickType,
                                 final int itemLayoutReference) {
-        Log.d("BLA", "Item clicked. Position " + listItem.listItemPosition
-                + ", itemLayoutReference " + itemLayoutReference + ". Type was: "
-                + (clickType == Control.Intents.CLICK_TYPE_SHORT ? "SHORT" : "LONG"));
         String keyCode = null;
+        Log.d("BLA", "itemLayoutReference: " + itemLayoutReference);
         switch (itemLayoutReference) {
             case R.id.buttonBack:
                 keyCode = Keycode.KEYCODE_BACK;
@@ -138,6 +133,18 @@ public class ATVControlExtension extends ManagedControlExtension {
                 break;
             case R.id.buttonPowerAVR:
                 keyCode = Keycode.KEYCODE_AVR_POWER;
+                break;
+            case R.id.buttonPrev:
+                keyCode = Keycode.KEYCODE_MEDIA_PREVIOUS;
+                break;
+            case R.id.buttonRew:
+                keyCode = Keycode.KEYCODE_MEDIA_REWIND;
+                break;
+            case R.id.buttonForward:
+                keyCode = Keycode.KEYCODE_MEDIA_SKIP_FORWARD;
+                break;
+            case R.id.buttonNext:
+                keyCode = Keycode.KEYCODE_MEDIA_NEXT;
                 break;
         }
 
